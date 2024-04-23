@@ -1,10 +1,7 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:simulasi_uts/screen_page/page_detail_berita.dart';
 import 'package:simulasi_uts/screen_page/page_login_api.dart';
-
 import '../model/model_berita.dart';
 import '../utils/session_manager.dart';
 
@@ -41,7 +38,7 @@ class _PageListBeritaState extends State<PageListBerita> {
     try {
       // Berhasil
       http.Response response = await http.get(
-        Uri.parse("http://10.126.159.105/edukasi_server1/getBerita.php"),
+        Uri.parse("http://192.168.113.135/edukasi_server1/getBerita.php"),
       );
 
       return modelBeritaFromJson(response.body).data;
@@ -58,11 +55,11 @@ class _PageListBeritaState extends State<PageListBerita> {
       appBar: AppBar(
         title: Text('Aplikasi Berita',
           style: TextStyle(
-            color: Colors.black, // Ubah warna teks menjadi putih
+            color: Colors.white, // Ubah warna teks menjadi putih
           ),),
-        backgroundColor: Colors.orange,
+        backgroundColor: Colors.black,
         iconTheme: IconThemeData(
-          color: Colors.black, // Ubah warna ikon back menjadi putih
+          color: Colors.white, // Ubah warna ikon back menjadi putih
         ),
         actions: [
           TextButton(onPressed: () {}, child: Text('Hi ... ${session.userName}')),
@@ -146,7 +143,8 @@ class _PageListBeritaState extends State<PageListBerita> {
                                     padding: EdgeInsets.all(4),
                                     child: ClipRRect(
                                       borderRadius: BorderRadius.circular(10),
-                                      child: Image.network('http://10.126.159.105/edukasi_server1/gambar_berita/${data.gambar}',
+                                      child: Image.network(
+                                        "http://192.168.113.135/edukasi_server1/gambar_berita/${data?.gambar}",
                                         fit: BoxFit.fill,
                                       ),
                                     )

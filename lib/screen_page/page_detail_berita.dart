@@ -28,7 +28,7 @@ class DetailBerita extends StatelessWidget {
             child: ClipRRect(
               borderRadius: BorderRadius.circular(10),
               child: Image.network(
-                "http://10.126.159.105/edukasi_server1/gambar_berita/${data?.gambar}",
+                "http://192.168.100.44/edukasi_server1/gambar_berita/${data?.gambar}",
                 fit: BoxFit.fill,
               ),
             ),
@@ -58,7 +58,7 @@ class _PageListBeritaState extends State<PageListBerita> {
   Future<List<Datum>?> getBerita() async {
     try {
       http.Response response = await http
-          .get(Uri.parse("http://10.126.159.105/edukasi_server1/getBerita.php"));
+          .get(Uri.parse("http://192.168.113.135/edukasi_server1/getBerita.php"));
       return modelBeritaFromJson(response.body).data;
     } catch (e) {
       ScaffoldMessenger.of(context).showSnackBar(
@@ -102,7 +102,7 @@ class _PageListBeritaState extends State<PageListBerita> {
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(10),
                                 child: Image.network(
-                                  'http://10.126.159.105/edukasi_server1/gambar_berita/${data?.gambar}',
+                                  'http://192.168.113.135/edukasi_server1/gambar_berita/${data?.gambar}',
                                   fit: BoxFit.fill,
                                 ),
                               ),

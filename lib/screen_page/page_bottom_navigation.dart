@@ -1,6 +1,6 @@
 
 import 'package:flutter/material.dart';
-import 'package:simulasi_uts/screen_page/page_detail_berita.dart';
+import 'package:simulasi_uts/screen_page/page_list_berita.dart';
 import 'package:simulasi_uts/screen_page/page_profil_user.dart';
 
 import '../../utils/session_manager.dart';

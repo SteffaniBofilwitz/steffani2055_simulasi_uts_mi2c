@@ -27,7 +27,7 @@ class _PageKaryawanState extends State<PageKaryawan> {
   Future<void> fetchData() async {
     try {
       final response = await http.get(
-          Uri.parse("http://10.126.159.105/edukasi_server/getPegawai.php"));
+          Uri.parse("http://192.168.100.44/edukasi_server/getPegawai.php"));
 
       if (response.statusCode == 200) {
         final jsonResponse = json.decode(response.body);
@@ -206,7 +206,7 @@ class _PageKaryawanState extends State<PageKaryawan> {
                                         onPressed: () {
                                           // Kirim request untuk menghapus data karyawan
                                           http.post(
-                                            Uri.parse('http://10.126.159.105/edukasi_server/deletePegawai.php'),
+                                            Uri.parse('http://192.168.100.44/edukasi_server/deletePegawai.php'),
                                             body: {'id': entry.value.id.toString()}, // Kirim ID karyawan yang akan dihapus
                                           ).then((response) {
                                             // Memeriksa respons dari server
@@ -470,7 +470,7 @@ class _PageTambahKaryawanState extends State<PageTambahKaryawan> {
 
                       // Mengirim data ke server
                       http.post(
-                        Uri.parse('http://10.126.159.105/edukasi_server/simpanPegawai.php'),
+                        Uri.parse('http://192.168.100.44/edukasi_server/simpanPegawai.php'),
                         body: dataKaryawan,
                       ).then((response) {
                         // Memeriksa respons dari server

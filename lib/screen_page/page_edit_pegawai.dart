@@ -128,7 +128,7 @@ class _PageEditKaryawanState extends State<PageEditKaryawan> {
                     if (keyForm.currentState?.validate() == true) {
                       // Kirim data perubahan ke server
                       http.post(
-                        Uri.parse('http://10.126.159.105/edukasi_server/updatePegawai.php'),
+                        Uri.parse('http://192.168.100.44/edukasi_server/updatePegawai.php'),
                         body: {
                           'id': widget.data.id.toString(),
                           'nama': txtNamaLengkap.text,

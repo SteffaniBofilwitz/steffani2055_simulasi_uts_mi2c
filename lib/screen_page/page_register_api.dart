@@ -35,7 +35,7 @@ class _PageRegisterApiState extends State<PageRegisterApi> {
         isLoading = true;
       });
 
-      http.Response response = await http.post(Uri.parse('http://10.126.159.105/edukasi_server1/register.php'),
+      http.Response response = await http.post(Uri.parse('http://192.168.113.135/edukasi_server1/register.php'),
           body: {
             "fullname": txtNama.text,
             "username": txtUsername.text,
